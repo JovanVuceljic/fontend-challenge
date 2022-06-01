@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 
+:root {
+  --red: #C04131;
+  --white: #fefefe;
+  --gray: #dedede;
+  --blue: #60afd0;
+  --black: #111;
+}
+
 html,
 body {
   margin: 0;
@@ -11,13 +19,118 @@ body {
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.frontend-challenge-container {
-  box-shadow: inset 0 0 1px 0 #bbb, 0 0 2px 1px #bbb;
+/* buttons */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
   border-radius: 4px;
+  padding: 5px 12px;
+  color: var(--black);
+  border: 1px solid var(--black);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+
+.btn:active {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2)
+}
+
+.btn-delete {
+  color: var(--white);
+  background: linear-gradient(#DD4B39, #D14836);
+  text-shadow: 1px 0 var(--red);
+  border: 1px solid #DD4B39;
+}
+
+.btn-delete:hover {
+  background: linear-gradient(#DD4B39, #C53727);
+  border: 1px solid #AF301F;
+}
+
+.btn-delete:active {
+  background: linear-gradient(#D74736, #AD2719);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2)
+}
+
+/* container */
+
+.frontend-challenge-container {
   display: flex;
   flex-direction: column;
   margin: 42px auto;
   padding: 20px;
   width: 675px;
   max-width: 80%;
+}
+
+.frontend-challenge-container .header .input-filter {
+  height: 30px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+/* recipes */
+
+.frontend-challenge-container .recipes-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.recipes-list .recipe-item {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+}
+
+.recipes-list .recipe-item:last-child {
+  border-bottom: none;
+}
+
+.recipes-list .recipe-item h2 {
+  margin-top: 5px;
+}
+
+.recipes-list .recipe-item p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 90%;
+}
+
+.recipes-list .recipe-item .btn-delete {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+/* pagination */
+
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pagination-wrap .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-wrap .pagination .btn {
+  margin: 0 3px;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.pagination-wrap .pagination .btn:hover {
+  opacity: 0.8;
+}
+
+.pagination-wrap .pagination .btn.active {
+  background-color: var(--blue);
+  color: var(--white);
 }
