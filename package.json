@@ -1,0 +1,33 @@
+{
+  "name": "frontend-challenge",
+  "version": "1.0.0",
+  "description": "Frontend challenge for candidates",
+  "author": "",
+  "main": "scripts/start.js",
+  "scripts": {
+    "start": "nodemon --ignore scripts/lib/servers/ApiServer/api/Storage/stores/recipes.json .",
+    "swagger-edit": "swagger_swagger_fileName=scripts/lib/servers/ApiServer/api/swagger/swagger.yaml swagger project edit",
+    "reset": "node scripts/lib/servers/ApiServer/reset-store.js",
+    "docker:start": "./scripts/docker-start.sh",
+    "docker:shell": "./scripts/docker-shell.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scout24ch/frontend-challenge.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "data-store": "^3.1.0",
+    "express": "^4.17.2",
+    "fs-extra": "^10.0.0",
+    "js-yaml": "^4.1.0",
+    "morgan": "^1.10.0",
+    "swagger-express-mw": "^0.7.0",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
